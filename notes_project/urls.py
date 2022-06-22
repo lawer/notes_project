@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from notes.views import llistat_alumnes, detalls_alumne, agregar_alumne, modificar_alumne, borrar_alumne
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('alumnes/', llistat_alumnes, name="llistat_alumnes"),
+    path('alumnes/<int:id_alumne>/', detalls_alumne, name="detalls_alumne"),
+    path('alumnes/agregar/', agregar_alumne, name="agregar_alumne"),
+    path('alumnes/modificar/<int:id_alumne>/', modificar_alumne, name="modificar_alumne"),
+    path('alumnes/borrar/<int:id_alumne>/', borrar_alumne, name="borrar_alumne")
 ]

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Detalls alumne</title>
+{% endblock %}
+
+{% block contingut %}
+    <h1>Detalls alumne {{ alumne.id }}</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Camp</th>
+            <th>Continguts</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Nom</td>
+            <td>{{ alumne.nom }}</td>
+        </tr>
+        <tr>
+            <td>Cognoms</td>
+            <td>{{ alumne.cognoms }}</td>
+        </tr>
+        <tr>
+            <td>tlf</td>
+            <td>{{ alumne.num_tlf }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3>Notes</h3>
+    {% for nota in alumne.notes.all %}
+        {{ nota.qualificacio }} <br>
+    {% endfor %}
+{% endblock %}

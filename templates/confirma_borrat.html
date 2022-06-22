@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block contingut %}
+    <form action=""
+    method="post">
+        Estàs segur?
+        {% csrf_token %}
+        <input type="submit">
+    </form>
+{% endblock %}

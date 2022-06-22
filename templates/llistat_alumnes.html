@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block contingut %}
+    <h1>Llistat alumnes</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID ALUMNE</th>
+            <th>NOM ALUMNE</th>
+            <th>Accions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for alumne in alumnes %}
+            <tr>
+                <td><a href="{% url 'detalls_alumne' alumne.id %}">{{ alumne.id }}</a></td>
+                <td>{{ alumne }}</td>
+                <td>
+                    <a href="{% url 'modificar_alumne' alumne.id %}" class="button">Modificar </a>
+                    <a href="{% url 'borrar_alumne' alumne.id %}" class="button">Borrar </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <a href="{% url 'agregar_alumne' %}" class="button">Agregar alumne</a>
+
+    <script>
+        $(document).ready(function () {
+            $('table').DataTable();
+        });
+    </script>
+{% endblock %}
