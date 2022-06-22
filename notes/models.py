@@ -6,5 +6,5 @@ class Alumne(models.Model):
     nom = models.CharField(max_length=100)
     cognoms = models.CharField(max_length=200)
     num_tlf = models.BigIntegerField()
-    sexe = models.CharField(blank=True, null=True)
+    sexe = models.CharField(blank=True, null=True, max_length=30)
 
